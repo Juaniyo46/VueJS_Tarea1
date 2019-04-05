@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Css Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #header{
+            padding-bottom: 2em;
+            padding-top: 2em;
+            width: 60%;
+            text-align: center;
+        }
+        p{
+            font-weight: bold;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container mt-5 bg-info" id="header">
+
+        <template v-if="!nombre == ''">
+                <template v-if="!genero == ''">
+                    <h1 v-if="genero.toLowerCase() == 'masculino'">Hola, Señor {{nombre}}.</h1>
+                    <h1 v-else-if="genero.toLowerCase() == 'femenino'">Hola, Señora {{nombre}}.</h1>
+                    <h1 v-if="genero.toLowerCase() != 'masculino' && genero.toLowerCase() != 'femenino'">Introduce un género válido, humano.</h2>
+                </template>
+                <h1 v-else>Hola, {{nombre}}</h1>
+        </template>
+        
+
+        <p>Introduce tu género:</p>
+        <input type="text" v-model="genero">
+
+        <p>Introduce tu nombre:</p>
+        <input type="text" v-model="nombre">
+    </div>
+    
+
+
+
+
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+
+        
+        new Vue({
+            el:'#header',
+            data:{nombre:'',genero:''}
+
+        });
+    </script>
+</html>
